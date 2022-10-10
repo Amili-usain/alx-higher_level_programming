@@ -3,7 +3,6 @@
 
 /**
  * print_python_float - gives data of the PyFloatObject
- *
  * @p: the PyObject
  */
 
@@ -28,7 +27,6 @@ void print_python_float(PyObject *p)
 
 /**
  * print_python_bytes - gives data of the PyBytesObject
- *
  * @p: the PyObject
  */
 
@@ -61,7 +59,6 @@ void print_python_bytes(PyObject *p)
 
 /**
  * print_python_list - gives data of the PyListObject
- *
  * @p: the PyObject
  */
 
