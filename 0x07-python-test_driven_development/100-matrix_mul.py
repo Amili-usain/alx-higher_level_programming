@@ -8,18 +8,18 @@ def matrix_mul(m_a, m_b):
     """Multiply two matrices(lists of lists of integers/floats)"""
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
-    l1 = len(m_a)
-    if l1 == 0:
+    r1 = len(m_a)
+    if r1 == 0:
         raise ValueError("m_a can't be empty")
-    l2 = None
+    r2 = None
     for i in m_a:
         if type(i) is not list:
             raise TypeError("m_a must be a list of lists")
-        if l2 is None:
-            l2 = len(i)
-            if l2 == 0:
+        if r2 is None:
+            r2 = len(i)
+            if r2 == 0:
                 raise ValueError("m_a can't be empty")
-        if l2 != len(i):
+        if r2 != len(i):
             raise TypeError("each row of m_a must should be of the same size")
         for j in i:
             if type(j) is not int and type(j) is not float:
@@ -28,28 +28,28 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_b must be a list")
     if len(m_b) == 0:
         raise ValueError("m_b can't be empty")
-    l3 = None
+    r3 = None
     for i in m_b:
         if type(i) is not list:
             raise TypeError("m_b must be a list of lists")
-        if l3 is None:
-            l3 = len(i)
-            if l3 == 0:
+        if r3 is None:
+            r3 = len(i)
+            if r3 == 0:
                 raise ValueError("m_b can't be empty")
-        if l3 != len(i):
+        if r3 != len(i):
             raise TypeError("each row of m_b must should be of the same size")
         for j in i:
             if type(j) is not int and type(j) is not float:
                 raise TypeError("m_b should contain only integers or floats")
-    if l2 != len(m_b):
+    if r2 != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     matrix = []
-    for i in range(l1):
-        l = []
-        for j in range(l3):
+    for i in range(r1):
+        r = []
+        for j in range(r3):
             n = 0
-            for k in range(l2):
+            for k in range(r2):
                 n += m_a[i][k] * m_b[k][j]
-            l.append(n)
-        matrix.append(l)
+            r.append(n)
+        matrix.append(r)
     return matrix
