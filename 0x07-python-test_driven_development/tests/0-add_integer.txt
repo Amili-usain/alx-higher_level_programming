@@ -81,15 +81,11 @@ Checking non-number with non-number:
 
 Checking bool with number:
 	 >>> add_integer(True, 1)
-	 Traceback (most recent call last):
-         ...
-         TypeError: a must be an integer
+	 2
 
 Checking number with bool:
 	 >>> add_integer(0, False)
-         Traceback (most recent call last):
-         ...
-         TypeError: b must be an integer
+         0
 
 Checking no args:
 	 >>> add_integer()
