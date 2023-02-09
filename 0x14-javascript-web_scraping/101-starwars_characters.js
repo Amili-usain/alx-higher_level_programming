@@ -1,20 +1,11 @@
 #!/usr/bin/node
-const request = require('request');
-const url = 'https://swapi.co/api/films/' + process.argv[2];
-request(url, function (error, response, body) {
-  if (!error) {
-    const characters = JSON.parse(body).characters;
-    printCharacters(characters, 0);
-  }
-});
+const { argv } = require('process');
 
-function printCharacters (characters, index) {
-  request(characters[index], function (error, response, body) {
-    if (!error) {
-      console.log(JSON.parse(body).name);
-      if (index + 1 < characters.length) {
-        printCharacters(characters, index + 1);
-      }
-    }
-  });
+if (argv[2] === undefined || !(Number(argv[2]))) {
+  console.log('Missing size');
+} else {
+  const rip = 'X'.repeat(argv[2]);
+  for (let i = 0; i < argv[2]; i++) {
+    console.log(rip);
+  }
 }
